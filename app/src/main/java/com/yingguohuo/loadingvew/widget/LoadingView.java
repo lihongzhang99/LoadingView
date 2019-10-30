@@ -46,8 +46,8 @@ public class LoadingView extends View {
         this.mContext = context;
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.LoadingViewStyle);
         //直接跟着view的框高走，这样更统一
-//        getWidth() = DensityUtil.dip2px(mContext, typedArray.getDimensionPixelSize(R.styleable.LoadingViewStyle_cricle_size, 17));
-//        pointSize = DensityUtil.dip2px(mContext, typedArray.getDimensionPixelSize(R.styleable.LoadingViewStyle_cricle_inner_size, 2));
+//        getWidth() = mContext, typedArray.getDimensionPixelSize(R.styleable.LoadingViewStyle_cricle_size, 17);
+//        pointSize = mContext, typedArray.getDimensionPixelSize(R.styleable.LoadingViewStyle_cricle_inner_size, 2);
         mFromAngle = typedArray.getInteger(R.styleable.LoadingViewStyle_begin_angle, 0);
         init();
     }
