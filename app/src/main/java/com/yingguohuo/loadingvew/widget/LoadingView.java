@@ -114,20 +114,20 @@ public class LoadingView extends View {
         mCriclePaint.setStrokeWidth(2 * (getWidth() / 16));
         canvas.drawArc(mRectF, mFromAngle, mAngle, false, mCriclePaint);
 
-        int onePF = 255 - (255 * (int) (mAngle * 100 / 360)) / 100;
+        int onePF = 255 - (255 * (int) (mAngle * 100 / 360)) / 100;//这个得走完隐藏流程360->0度
 //        Log.d(TAG, "onePF:" + onePF);
         pointOnePaint.setAlpha(onePF);
         canvas.drawCircle(5 * (getWidth() / 16), getHeight() / 2, 1 * (getWidth() / 16), pointOnePaint);
 
 
-        //        0~1 90～160 160~270
+        //        0~80 80～220 220~360
         float size;
         if (mAngle < 80) {
             size = 0;
         } else if (mAngle < 220) {
-            size = (mAngle - 80) / 140 * 360;
+            size = (mAngle - 80) / 140 * 360;//这个得走完显示流程0->360度
         } else {
-            size = (360 - mAngle) / 140 * 360;
+            size = (360 - mAngle) / 140 * 360;//这个得走完隐藏流程360->0度
         }
         int twoPF = 255 * ((int) (size * 100 / 360)) / 100;
 
@@ -135,7 +135,7 @@ public class LoadingView extends View {
         canvas.drawCircle(8 * (getWidth() / 16), getHeight() / 2, 1 * (getWidth() / 16), pointTwoPaint);
 
 
-        //        0~1 160～270 270~360
+        //        0~120 120～240 240~360
         float sizeThree;
         if (mAngle < 120) {//开始不显示
             sizeThree = 0;
