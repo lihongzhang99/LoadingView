@@ -12,4 +12,4 @@
      3 宽度分成16等份，具体分析见图
       
        
-    ![img](https://upload-images.jianshu.io/upload_images/7227181-36d6eda051251b57.gif) 
+    ![img](https://github.com/yingguohuo/LoadingView/blob/master/app/src/main/res/raw/loadingview.gif) 
